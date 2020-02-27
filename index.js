@@ -3,6 +3,8 @@ const express = require("express")
 let users = require("./data/db")
 const server = express()
 
+const port = process.env.PORT || 4000
+
 server.use(express.json())
 
 server.get("/", (req, res) => {
@@ -107,6 +109,6 @@ server.put('/api/users/:id', (req, res) => {
 
 
 // starting the server
-server.listen(5000, () => {
-    console.log("Server Started At http://localhost:5000")
+server.listen(port, () => {
+    console.log(`Server Started At http://localhost:${port}`)
 })
